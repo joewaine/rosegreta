@@ -1,16 +1,6 @@
 
 (function(window, document, Papa) {
     
-    app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/public/index2.html')));
-    app.get('/about', (req, res) => res.sendFile(path.join(__dirname + '/public/index2.html')));
-    app.get('/yoga', (req, res) => res.sendFile(path.join(__dirname + '/public/index2.html')));
-    app.get('/kexp', (req, res) => res.sendFile(path.join(__dirname + '/public/index2.html')));
-    app.get('/soundcloud', (req, res) => res.sendFile(path.join(__dirname + '/public/index2.html')));
-    app.get('/contact', (req, res) => res.sendFile(path.join(__dirname + '/public/index2.html')));
-    
-
-
-
     let page = 'index';
 
     const path = window.location.pathname;
