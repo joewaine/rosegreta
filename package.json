@@ -1,0 +1,30 @@
+{
+  "name": "morgan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "css": "node-sass ./assets/stylesheets/ -o ./public/stylesheets/ -w",
+    "dev": "npm run css & nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malls/establishment.git"
+  },
+  "author": "Forrest",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/malls/establishment/issues"
+  },
+  "homepage": "https://github.com/malls/establishment#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "masonry": "0.0.2",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2"
+  }
+}
