@@ -1,36 +1,39 @@
-.contact-section {
-  display: flex;
+.body-section {
+  /* display: flex; */
   flex-wrap: nowrap;
   overflow-x: auto;
   flex-direction: row;
-  height: 60%;
+  height: 100%;
   padding: 40px; }
 
-.contact-container {
+.parent-container {
   flex: 0 0 auto; }
 
-.contact-container > img {
-  display: inline-block;
+.parent-container > img {
+  display: block;
   max-height: 380px;
   max-width: 100%; }
 
-.contact-container > .contact-info {
-  display: inline-block;
-  padding-left: 40px;
-  padding-right: 40px; }
+.parent-container > .child-info {
+  display: block;
+  padding-left: 0px;
+  padding-right: 40px;
+  margin-bottom: 20px;
+ }
 
 .contact-company-info {
-  padding-left: 40px;
+  padding-left: 0px;
   padding-top: 20px;
   height: 30%; }
 
 @media all and (max-width: 600px) {
-  .contact-section {
+  .body-section {
     padding-left: 20px;
     flex-direction: column; }
   .contact-company-info {
     padding-left: 20px; }
-  .contact-container > .contact-info {
+  .parent-container > .child-info {
+    margin-bottom: 20px;
     padding-left: 0px;
     padding-bottom: 20px;
     padding-top: 10px; } }

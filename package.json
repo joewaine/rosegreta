@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/malls/establishment#readme",
   "dependencies": {
+    "csv2html": "0.0.1",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
     "masonry": "0.0.2",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "node-sass": "^4.12.0",

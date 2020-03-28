@@ -43,7 +43,7 @@
     padding: 20px;
     width: 100%; }
     .runway-highlight-name div {
-      display: inline-block;
+      display: block;
       padding-right: 50px; }
     .runway-highlight-name .pad-sideways {
       display: inline;

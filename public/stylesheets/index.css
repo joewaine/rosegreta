@@ -19,12 +19,12 @@
     padding-right: 40px;
     position: relative; }
   .full-height-image {
-    display: inline-block;
+    display: block;
     width: auto;
     height: 100%;
     max-height: calc(100vh - 47px - 47px); }
   .pad-credit-text {
-    display: inline-block;
+    display: block;
     margin-top: -40px;
     height: 100%;
     position: absolute;
@@ -40,9 +40,9 @@
     overflow-y: auto;
     flex-direction: column; }
     .parent-horizontal-flex a {
-      display: inline-block; }
+      display: block; }
     .parent-horizontal-flex .full-height-image {
-      display: inline-block;
+      display: block;
       height: auto;
       width: 100%;
       max-width: 100%; }
