@@ -43,7 +43,7 @@ header {
   height: 40px;
   text-align: center;
   cursor: pointer;
-  padding-top: 20px;
+  padding-top: 10px;
   font-size: 18px;
   border-bottom: 1px solid black;
   font-family: "HelveticaNeue-Roman", Helvetica, Arial, sans-serif; }
@@ -89,6 +89,17 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;}
+
+
+  .footer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+
 
 .menu-item {
   cursor: pointer;
@@ -138,3 +149,9 @@ h1{
   font-size: 16px;
   text-transform: uppercase;
 }
+
+h1.sound-cloud-title{
+  margin-bottom: 0;
+}
+
+
