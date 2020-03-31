@@ -22,9 +22,9 @@
             data.forEach(item => {
                if(item.type === "text"){
                 body += `<div class="child-info">${item.body}</div>`
-            }else{
+            }else if(item.type === "img"){
                 body += `<div class="child-info"><img src="images/${item.body}" alt="yoga"></div>`
-            }                
+            }else{}                
             });
 
             body += `</div>`;
@@ -42,11 +42,11 @@
             let body = '';
 
             data.forEach(item => {
-                body += `<div class="parent-container"><h1>contact</h1>
+                body += `<div class="parent-container"><h1 class="contact-page-title">contact</h1>
                            <div class="child-info"><br>
-                            <u>${item.email}</u>
+                            ${item.email}
                         <br><br>
-                        <u>${item.link}</u><br>
+                        ${item.link}<br>
                     </div>
                 </div>`
 
@@ -62,16 +62,19 @@
         },
         soundcloud(data) {
             //name,title,email,instagram,imageurl
-            let body = '<div class="parent-container"><h1>soundcloud</h1></div>';
+            let body = '<div class="parent-container"><h1 class="sound-cloud-title">soundcloud</h1></div>';
 
             data.forEach(item => {
                 body += `<div class="child-info">
                         <br>
-                        ${item.title}
+                        <span class="name">${item.title}</span>
                         <br>
-                        <a href="${item.link}" target="_blank">${item.link}</a>
                         <br>
-
+                        ${item.link}
+                        <br>
+                        <br>
+                        ${item.description}
+<br>
                 </div>`
 
             });
@@ -110,8 +113,8 @@ if(item.type === "text"){
             return `<div class="body-section">
                 ${body}
 
-
-                
+<br />
+              
             </div>
 `;
         },
@@ -124,7 +127,7 @@ if(item.type === "text"){
                 if(item.type === "text"){
                  body += `<div class="child-info">${item.body}</div>`
              }else{
-                 body += `<div class="child-info"><img src="images/${item.body}" alt="yoga"></div>`
+                 body += `<div class="child-info"><img src="images/${item.body}" alt="kexp"></div>`
              }                
              });
             
@@ -138,7 +141,7 @@ if(item.type === "text"){
             return `<div class="body-section">
                 ${body}
 
-
+<br>
                 
             </div>
 `;

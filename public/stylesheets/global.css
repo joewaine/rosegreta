@@ -68,7 +68,16 @@ header {
   font-weight: 150;
   font-size: 11pt;
   text-justify: inter-word;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+  font-size: 20px !important;
+  line-height: 30px !important;
+}
+
+
+p.body-text{
+  font-size: 20px !important;
+  line-height: 30px !important;
+}
 
 footer {
   border-top: 1px solid black;
@@ -116,4 +125,16 @@ footer {
 
 h1{
     margin-bottom: 10px;
+}
+
+.sound-cloud-title,.contact-page-title{
+  font-weight: bold;
+  font-size: 38px;
+  text-transform: uppercase;
+  margin-bottom: 1  0px;
+}
+.name{
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
 }
