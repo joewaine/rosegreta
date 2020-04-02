@@ -1,0 +1,161 @@
+
+(function(window, document, Papa) {
+    
+    let page = 'index';
+
+    const path = window.location.pathname;
+    const specificPage = window.location.search ? `/${window.location.search.split('=')[1]}` : ''
+
+   if (path.includes('yoga')) {
+        page = 'yoga';
+    } else if (path.includes('kexp')) {
+        page = 'kexp';
+    } else if (path.includes('soundcloud')) {
+        page = 'soundcloud';
+    } else if (path.includes('contact')) {
+        page = 'contact';
+    }
+
+    const templateMethods = {
+        index(data){
+            let body = '<div class="parent-container">';
+            data.forEach(item => {
+               if(item.type === "text"){
+                body += `<div class="child-info">${item.body}</div>`
+            }else if(item.type === "img"){
+                body += `<div class="child-info text-center"><img src="images/${item.body}" alt="yoga"></div>`
+            }else{}                
+            });
+
+            body += `</div>`;
+
+            return `<div class="body-section">
+                ${body}
+
+
+                
+            </div>
+`;
+        },
+        contact(data) {
+
+            let body = '';
+
+            data.forEach(item => {
+                body += `<div class="parent-container">
+                        <div class="child-info">
+                    <h1 class="contact-page-title">contact</h1>
+                    </div>
+                           <div class="child-info">
+                            ${item.email}
+                        <br>
+                        ${item.link}<br>
+                    </div>
+                </div>`
+
+            });
+            
+
+
+            return `<div class="body-section">
+                ${body}
+                </div>
+`;
+
+        },
+        soundcloud(data) {
+            //name,title,email,instagram,imageurl
+            let body = '<div class="parent-container"><div class="child-info"><h1 class="sound-cloud-title">soundcloud</h1></div>';
+
+            data.forEach(item => {
+                body += `<div class="child-info">
+                        <br>
+                        <span class="name">${item.title}</span>
+                       ${item.link === `&nbsp;` ? `` : `<br><br>` + item.link + `<br>`}
+                       ${item.description === `&nbsp;` ? `` : `<br>` + item.description + `<br>`}
+                </div>`
+
+            });
+            
+            body += `</div>`;
+
+            return `<div class="body-section">
+                ${body}
+
+
+                
+            </div>
+`;
+
+        },
+
+        yoga(data, folder) {
+            let body = '<div class="parent-container">';
+
+            data.forEach(item => {
+
+
+if(item.type === "text"){
+    body += `<div class="child-info">${item.body}</div>`
+}else{
+    body += `<div class="child-info text-center"><img src="images/${item.body}" alt="yoga"></div>`
+}
+
+
+
+                
+            });
+
+            body += `</div>`;
+
+            return `<div class="body-section">
+                ${body}
+
+<br />
+              
+            </div>
+`;
+        },
+
+        kexp(data, folder) {
+
+            let body = '<div class="parent-container">'
+
+            data.forEach(item => {
+                if(item.type === "text"){
+                 body += `<div class="child-info">${item.body}</div>`
+             }else{
+                 body += `<div class="child-info text-center"><img src="images/${item.body}" alt="kexp"></div>`
+             }                
+             });
+            
+
+            
+
+            body += '</div>';
+
+
+
+            return `<div class="body-section">
+                ${body}
+
+<br>
+                
+            </div>
+`;
+
+
+        }
+    }
+
+    Papa.parse(`csvs/${page}${specificPage}.csv`, {
+        download: true,
+        header: true,
+        complete: (results) => {
+            document
+                .querySelector('header')
+                .insertAdjacentHTML('afterend', templateMethods[page.replace('-','')](results.data, specificPage));
+        }
+    });
+
+})(window, document, Papa);
