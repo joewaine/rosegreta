@@ -71,13 +71,8 @@
                 body += `<div class="child-info">
                         <br>
                         <span class="name">${item.title}</span>
-                        <br>
-                        <br>
-                        ${item.link}
-                        <br>
-                        <br>
-                        ${item.description}
-<!-- <br> -->
+                       ${item.link === `&nbsp;` ? `` : `<br><br>` + item.link + `<br>`}
+                       ${item.description === `&nbsp;` ? `` : `<br>` + item.description + `<br>`}
                 </div>`
 
             });
